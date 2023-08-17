@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  backend:
+    image: "mushroom1324/spring-boot-tutorial-18th"
+    ports:
+      - "8080:8080"
+    restart: "always"
+
+  nginx:
+    image: "mushroom1324/nginx"
+    ports:
+      - "80:80"
+    restart: "always"
+    depends_on:
+      - "backend"
